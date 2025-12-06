@@ -161,19 +161,19 @@ A interface desenvolvida no Notebook permitiu testar o modelo em cenários reais
 
 #### ✅ Caso 1: Detecção Correta de Pneumonia (Verdadeiro Positivo)
 O modelo identificou corretamente uma opacidade pulmonar severa com alta confiança.
-![Resultado Pneumonia]([INSIRA O LINK/CAMINHO DA IMAGEM DO ACERTO DE PNEUMONIA AQUI])
+![Resultado Pneumonia]([assets/resultado_verdadeiro_positivo.png])
 *Resultado: Pneumonia (Confiança: ~93%)*
 
 #### ✅ Caso 2: Identificação de Paciente Saudável (Verdadeiro Negativo)
 O modelo classificou corretamente um pulmão limpo, evitando diagnósticos errados em pessoas saudáveis.
-![Resultado Normal]([INSIRA O LINK/CAMINHO DA IMAGEM DO ACERTO NORMAL AQUI])
+![Resultado Normal]([assets/resultado_verdadeiro_negativo.png])
 *Resultado: Normal (Confiança: ~83%)*
 
 ### 3. Análise Crítica e Limitações Técnicas
 
 Durante a fase de testes de estresse (Stress Testing) com imagens de baixa qualidade da internet, documentamos um caso de **Falso Negativo**:
 
-![Falso Negativo]([INSIRA O LINK/CAMINHO DA IMAGEM DO ERRO AQUI])
+![Falso Negativo]([assets/resultado_falso_negativo.png])
 
 * **O Problema:** Uma imagem de pneumonia foi classificada como Normal.
 * **A Causa Raiz:** Para viabilizar o treinamento rápido do protótipo (MVP), as imagens foram redimensionadas para **64x64 pixels**. Essa compressão agressiva suavizou as manchas sutis da pneumonia, tornando-as invisíveis para a rede neural.
@@ -181,28 +181,10 @@ Durante a fase de testes de estresse (Stress Testing) com imagens de baixa quali
 
 ---
 
-## 🗂 Estrutura dos Arquivos (Parte 1 e 2)
+## 🗂 Estrutura dos Arquivos
 
 ```
 cardioia-fase4/
-│
-├── assets/                                 # Pasta para guardar as imagens
-│   ├── metricas_cnn_simples.png            # (Antigo: 1._Print_Resultado...)
-│   ├── metricas_vgg16.png                  # (Antigo: 2._Print_Resultado...)
-│   ├── resultado_verdadeiro_positivo.png   # (Antigo: Fig1._Verdadeiro...)
-│   ├── resultado_verdadeiro_negativo.png   # (Antigo: Fig2._Verdadeiro...)
-│   └── resultado_falso_negativo.png        # (Antigo: Fig3._Falso...)
-│
-├── notebooks/                              # Pasta para o código
-│   └── CardioIA_Fase4_Final.ipynb          # (Renomeie seu notebook longo para este nome mais limpo)
-│
-├── .gitignore                              # ARQUIVO NOVO (Explico abaixo)
-├── README.md                               # Aquele texto que criamos agora
-└── Relatorio_Tecnico_CardioIA.pdf          # (Seu PDF final)
-└─ README
-```
-
-nome-do-repositorio/
 │
 ├── assets/                                  # Pasta reservada para guardar imagens estáticas e prints do projeto
 │   ├── metricas_cnn_simples.png             # Print dos gráficos de desempenho do Modelo 1 (CNN Simples)
@@ -211,13 +193,14 @@ nome-do-repositorio/
 │   ├── resultado_verdadeiro_negativo.png    # Print da interface acertando um caso Normal (Verdadeiro Negativo)
 │   └── resultado_falso_negativo.png         # Print do erro de resolução (Falso Negativo) para análise crítica
 │
-├── notebooks/                               # Pasta dedicada aos códigos fontes e scripts
+├── notebook/                               # Pasta dedicada aos códigos fontes e scripts
 │   └── Notebook_CardioIA_Fase4Cap1.ipynb    # O arquivo principal com todo o código da Parte 1 e da Parte 2 e com o notebook interativo para apresentação dos resultados (Pré-proc, Modelos e Interface)
 │
 ├── docs/ 
 │   └── Relatorio_CardioIA_Fase4Cap1.pdf     # O documento PDF formal com a descrição técnica e justificativas
 │
 └── README.md                                # O arquivo de texto com a apresentação do projeto, equipe e resultados
+```
 
 ---
 
