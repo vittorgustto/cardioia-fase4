@@ -123,7 +123,10 @@ Este projeto foi desenhado considerando pilares de disciplinas correlatas à Fas
 1.  **Clone o repositório** ou baixe o arquivo `Notebook_Parte_1_e_2_Cardioia_Fase4_Cap1_(com notebook interativo).ipynb`.
 2.  Abra o notebook no **Google Colab**.
 3.  **Habilite a GPU:** Vá em `Ambiente de execução` > `Alterar tipo` > `T4 GPU`.
-4.  **Token Kaggle:** É necessário ter um arquivo `kaggle.json` (que está na pasta) para baixar o dataset automaticamente (o código solicitará o upload).
+4.  **Token Kaggle:** É necessário ter um arquivo `kaggle.json` para baixar o dataset automaticamente (o código solicitará o upload). Para obter este arquivo:
+      - Vá na sua conta do Kaggle -> Settings -> API -> Clique em "Create New Token".
+      - Ele vai baixar um arquivo chamado kaggle.json.
+      - Faça o upload que o código solicitou.
 5.  Execute as células sequencialmente:
     * *Parte 1 (Pré-Processamento e Organização):* Baixa e prepara os dados.
     * *Parte 2 (Classificação com CNN e Transfer Learning com VGG16):* Treina as IAs.
@@ -181,19 +184,40 @@ Durante a fase de testes de estresse (Stress Testing) com imagens de baixa quali
 ## 🗂 Estrutura dos Arquivos (Parte 1 e 2)
 
 ```
-cardioia-fase2/
-├─ assets/
-├─ docs/
-│  ├─ Parte1/
-│  │  ├─ diagnostico.py              # script que analisa frases e sugere diagnósticos
-│  │  ├─ sintomas.txt                # 10 frases simuladas de pacientes
-│  │  ├─ mapa_conhecimento.csv       # mapa de sintomas → doenças
-│  │  └─ resultados_diagnostico.csv  # saída gerada
-│  ├─ Parte2/
-│  │  ├─ classificador.ipynb         # notebook com TF-IDF, treino e avaliação do modelo
-│  │  └─ frases_risco.csv            # dataset com frases e rótulos (alto/baixo risco)
+cardioia-fase4/
+│
+├── assets/                                 # Pasta para guardar as imagens
+│   ├── metricas_cnn_simples.png            # (Antigo: 1._Print_Resultado...)
+│   ├── metricas_vgg16.png                  # (Antigo: 2._Print_Resultado...)
+│   ├── resultado_verdadeiro_positivo.png   # (Antigo: Fig1._Verdadeiro...)
+│   ├── resultado_verdadeiro_negativo.png   # (Antigo: Fig2._Verdadeiro...)
+│   └── resultado_falso_negativo.png        # (Antigo: Fig3._Falso...)
+│
+├── notebooks/                              # Pasta para o código
+│   └── CardioIA_Fase4_Final.ipynb          # (Renomeie seu notebook longo para este nome mais limpo)
+│
+├── .gitignore                              # ARQUIVO NOVO (Explico abaixo)
+├── README.md                               # Aquele texto que criamos agora
+└── Relatorio_Tecnico_CardioIA.pdf          # (Seu PDF final)
 └─ README
 ```
+
+nome-do-repositorio/
+│
+├── assets/                                  # Pasta reservada para guardar imagens estáticas e prints do projeto
+│   ├── metricas_cnn_simples.png             # Print dos gráficos de desempenho do Modelo 1 (CNN Simples)
+│   ├── metricas_vgg16.png                   # Print dos gráficos de desempenho do Modelo 2 (VGG16 - Transfer Learning)
+│   ├── resultado_verdadeiro_positivo.png    # Print da interface acertando um caso de Pneumonia (Verdadeiro Positivo)
+│   ├── resultado_verdadeiro_negativo.png    # Print da interface acertando um caso Normal (Verdadeiro Negativo)
+│   └── resultado_falso_negativo.png         # Print do erro de resolução (Falso Negativo) para análise crítica
+│
+├── notebooks/                               # Pasta dedicada aos códigos fontes e scripts
+│   └── Notebook_CardioIA_Fase4Cap1.ipynb    # O arquivo principal com todo o código da Parte 1 e da Parte 2 e com o notebook interativo para apresentação dos resultados (Pré-proc, Modelos e Interface)
+│
+├── docs/ 
+│   └── Relatorio_CardioIA_Fase4Cap1.pdf     # O documento PDF formal com a descrição técnica e justificativas
+│
+└── README.md                                # O arquivo de texto com a apresentação do projeto, equipe e resultados
 
 ---
 
