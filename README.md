@@ -43,8 +43,8 @@ O objetivo deste protótipo é atuar como um **Assistente Cardiológico Virtual*
 
 Este projeto foi desenvolvido adotando metodologias ágeis e divisão interdisciplinar de tarefas, simulando um ambiente real de HealthTech. A equipe foi estruturada para cobrir as frentes de Engenharia de Dados e Ciência de Dados.
 
-| Integrante | Função Principal |  |
-| :--- | :--- | :--- |
+| Integrante |
+| :--- |
 | **[Vitor Augusto Gomes]** • Configuração do ambiente e API do Kaggle.<br>• Pipeline de ETL: Aquisição, limpeza e pré-processamento.<br>• Implementação de Data Augmentation.<br>• Desenvolvimento do Modelo Baseline (CNN do Zero). |
 | **[João Vitor Lopes Beiro]** • Implementação de Transfer Learning (VGG16).<br>• Otimização de hiperparâmetros e análise de métricas (Recall/F1).<br>• Desenvolvimento da interface interativa (Protótipo).<br>• Documentação técnica e análise de erros. |
 
