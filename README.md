@@ -35,7 +35,9 @@
 
 A **CardioIA** avança para a Fase 4, focada na aplicação de **Visão Computacional** e **Deep Learning** para análise de imagens médicas. 
 
-O objetivo deste protótipo é atuar como um **Assistente Cardiológico Virtual**, capaz de processar exames de Raio-X de tórax e classificar, com alta confiabilidade, a presença de **Pneumonia** ou condições **Normais**. Esta solução visa auxiliar a tomada de decisão clínica (CDSS), priorizando a eficiência na triagem de pacientes.
+O objetivo deste protótipo é atuar como um **Assistente Cardiológico Virtual**, capaz de processar exames de Raio-X de tórax e classificar, com alta confiabilidade, a presença de **Pneumonia** ou condições **Normais** utilizando técnicas de Deep Learning (CNNs e Transfer Learning). Esta solução visa auxiliar a tomada de decisão clínica (CDSS), priorizando a eficiência na triagem de pacientes.
+
+Dando continuidade à fase anterior de monitoramento contínuo, a **CardioIA** avança agora para a **Fase 4: Análise Visual**. O desafio é transformar imagens médicas brutas em informações interpretáveis para auxílio à tomada de decisão clínica.
 
 ---
 
@@ -96,6 +98,23 @@ Os modelos foram avaliados com foco em métricas de saúde (Recall/Sensibilidade
 
 ### Análise Crítica
 Durante os testes de estresse, observou-se que a resolução reduzida (64x64) pode gerar falsos negativos em casos de opacidade sutil. Para a próxima fase, recomenda-se aumentar a entrada para **224x224 pixels**.
+
+---
+
+## 🌐 Integração Interdisciplinar e Governança
+
+Este projeto foi desenhado considerando pilares de disciplinas correlatas à Fase 4:
+
+* **Governança de Dados e Ética:**
+    * Utilização estrita de **dados públicos e anonimizados** (Dataset Kaggle/NIH), garantindo conformidade com normas de privacidade (LGPD/HIPAA) ao não utilizar dados reais de pacientes sem consentimento.
+    * Foco em **Explicabilidade (Recall)**: Priorizamos modelos que minimizam falsos negativos, assumindo a responsabilidade ética de uma ferramenta de suporte à decisão médica.
+
+* **Desenvolvimento Mobile:**
+    * A escolha de pré-processamento com imagens de **64x64 pixels** e arquiteturas otimizadas visa a futura conversão do modelo para **TensorFlow Lite**.
+    * O objetivo é permitir que o Assistente Virtual rode localmente em dispositivos móveis (Edge Computing) em áreas com baixa conectividade.
+
+* **Generative AI (Próximos Passos):**
+    * Planeja-se o uso de GANs (Generative Adversarial Networks) para gerar imagens sintéticas de pneumonia, aumentando o dataset de treino e reduzindo o desbalanceamento de classes em iterações futuras.
 
 ---
 
