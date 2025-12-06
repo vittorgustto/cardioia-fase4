@@ -161,19 +161,19 @@ A interface desenvolvida no Notebook permitiu testar o modelo em cenários reais
 
 #### ✅ Caso 1: Detecção Correta de Pneumonia (Verdadeiro Positivo)
 O modelo identificou corretamente uma opacidade pulmonar severa com alta confiança.
-![Resultado Pneumonia]([assets/resultado_verdadeiro_positivo.png])
+![Resultado Pneumonia](assets/resultado_verdadeiro_positivo.png)
 *Resultado: Pneumonia (Confiança: ~93%)*
 
 #### ✅ Caso 2: Identificação de Paciente Saudável (Verdadeiro Negativo)
 O modelo classificou corretamente um pulmão limpo, evitando diagnósticos errados em pessoas saudáveis.
-![Resultado Normal]([assets/resultado_verdadeiro_negativo.png])
+![Resultado Normal](assets/resultado_verdadeiro_negativo.png)
 *Resultado: Normal (Confiança: ~83%)*
 
 ### 3. Análise Crítica e Limitações Técnicas
 
 Durante a fase de testes de estresse (Stress Testing) com imagens de baixa qualidade da internet, documentamos um caso de **Falso Negativo**:
 
-![Falso Negativo]([assets/resultado_falso_negativo.png])
+![Falso Negativo](assets/resultado_falso_negativo.png)
 
 * **O Problema:** Uma imagem de pneumonia foi classificada como Normal.
 * **A Causa Raiz:** Para viabilizar o treinamento rápido do protótipo (MVP), as imagens foram redimensionadas para **64x64 pixels**. Essa compressão agressiva suavizou as manchas sutis da pneumonia, tornando-as invisíveis para a rede neural.
